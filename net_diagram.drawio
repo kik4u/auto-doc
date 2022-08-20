@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-20T21:36:21.682Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="6bP7cm8XEO48kSU-k8VR" version="20.2.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-20T21:43:21.955Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="kKQQaJuTM4-fJvIecriq" version="20.2.5" type="github">
   <diagram name="subnets" id="bfe91b75-5d2c-26a0-9c1d-138518896778">
     <mxGraphModel dx="593" dy="308" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -28,6 +28,9 @@
             <mxPoint x="410" y="350" as="sourcePoint" />
             <mxPoint x="620" y="350" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="J3v6YOT9HYIqkn5Tcidv-6" value="router_1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
