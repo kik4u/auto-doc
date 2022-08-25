@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Graphyte Configuration File - Graphyte Webdoc Automation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Graphyte Configuration File";
+    var mkdocs_page_input_path = "configfile.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Graphyte Webdoc Automation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The Basics</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Graphyte Step-by-Step Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../templates/">Creating Templates</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_visio/">Creating SVG diagrams with Microsoft Visio</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_drawio/">Creating SVG diagrams with Draw.io</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_inkscape/">Creating SVG diagrams with Inkscape</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_uml/">Creating UML diagrams for Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_yang/">Rendering YANG diagrams with Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../linking/">Linking Input Diagrams and Templates</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../variables/">Performing Variable Validation</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Graphyte Configuration File</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#configuration-file">Configuration File</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../running/">Running Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../output_files/">Graphyte Output Files: The Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Graphyte Webdoc Automation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Graphyte Configuration File</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="configuration-file">Configuration File</h1>
+<p>Graphyte requires a configuration file where the model owner will add some mandatory settings and others that are optional:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Section</th>
+<th align="left">Setting</th>
+<th align="left">Mandatory/Optional</th>
+<th align="left">Example</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>[main]</strong></td>
+<td align="left">model</td>
+<td align="left">mandatory</td>
+<td align="left">model = HLD Customer ACME</td>
+<td align="left">Global name of the model. It will appear in all modules.</td>
+</tr>
+<tr>
+<td align="left"><strong>[main]</strong></td>
+<td align="left">version</td>
+<td align="left">mandatory</td>
+<td align="left">version = 1.0</td>
+<td align="left">Version of the model.</td>
+</tr>
+<tr>
+<td align="left"><strong>[main]</strong></td>
+<td align="left">changes_file</td>
+<td align="left">optional</td>
+<td align="left">changes_file = CHANGES.txt</td>
+<td align="left">Text file with log of changes for the model. It will show in "Changes" tab in the navigation menu.</td>
+</tr>
+<tr>
+<td align="left"><strong>[parameters]</strong></td>
+<td align="left">auth_params</td>
+<td align="left">optional</td>
+<td align="left">auth_params = ACME_params.xls</td>
+<td align="left">Worksheet with the list of authorised parameters for template validation.</td>
+</tr>
+<tr>
+<td align="left"><strong>[layout]</strong></td>
+<td align="left">diagram_order</td>
+<td align="left">optional</td>
+<td align="left">diagram_order = Overview.svg,Sequence.uml,Architecture Components.uml,Service.yang</td>
+<td align="left">Desired order for the modules in the navigation menu. Use exact diagram filenames (spaces allowed). Comma separated.</td>
+</tr>
+<tr>
+<td align="left"><strong>[layout]</strong></td>
+<td align="left">diagram_ignore_list</td>
+<td align="left">optional</td>
+<td align="left">diagram_ignore_list = topology.svg,l3vpn.yang</td>
+<td align="left">List of diagram files to skip processing into modules. Use exact diagram filenames (spaces allowed). Comma separated.</td>
+</tr>
+<tr>
+<td align="left"><strong>[layout]</strong></td>
+<td align="left">pyang_uml_no</td>
+<td align="left">optional</td>
+<td align="left">pyang_uml_no = annotation,import,typedef</td>
+<td align="left">PYANG options to skip when converting YANG into UML. (Allowed values: uses,leafref,identity,identityref,typedef,annotation,import,circles,stereotypes.)</td>
+</tr>
+<tr>
+<td align="left"><strong>[confluence]</strong></td>
+<td align="left">enabled</td>
+<td align="left">optional</td>
+<td align="left">enabled = True</td>
+<td align="left">Upload model to confluence instance.</td>
+</tr>
+<tr>
+<td align="left"><strong>[confluence]</strong></td>
+<td align="left">conf_base_url</td>
+<td align="left">mandatory when confluence enabled = True</td>
+<td align="left">conf_base_url = https://scdp.cisco.com/conf</td>
+<td align="left">Confluence Server Base URL</td>
+</tr>
+<tr>
+<td align="left"><strong>[confluence]</strong></td>
+<td align="left">parent_page_url</td>
+<td align="left">mandatory when confluence enabled = True</td>
+<td align="left">parent_page_url = https://scdp.cisco.com/conf/display/TTD/</td>
+<td align="left">URL of confluence page below which the model should be uploaded.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="configfile.jpg" src="../img/configfile.jpg" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../running/" class="btn btn-neutral float-right" title="Running Graphyte">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../variables/" class="btn btn-neutral" title="Performing Variable Validation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../variables/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../running/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

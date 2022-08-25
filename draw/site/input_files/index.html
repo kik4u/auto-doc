@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Input Files - Graphyte Webdoc Automation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Input Files";
+    var mkdocs_page_input_path = "input_files.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Graphyte Webdoc Automation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The Basics</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Graphyte Step-by-Step Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../templates/">Creating Templates</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_visio/">Creating SVG diagrams with Microsoft Visio</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_drawio/">Creating SVG diagrams with Draw.io</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_inkscape/">Creating SVG diagrams with Inkscape</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_uml/">Creating UML diagrams for Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../diagrams_yang/">Rendering YANG diagrams with Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../linking/">Linking Input Diagrams and Templates</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../variables/">Performing Variable Validation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../configfile/">Graphyte Configuration File</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../running/">Running Graphyte</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../output_files/">Graphyte Output Files: The Model</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Graphyte Webdoc Automation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Input Files</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="input-files">Input Files</h1>
+<p>To generate a model, the user is required to provide a series of input files:</p>
+<ul>
+<li><strong>Templates</strong>: These are basically text files with content that will show up in the viewer when triggered by mouse clicks on the diagram. The currently supported formats are Plain Text files (<strong>.txt</strong>), eXtensible Markup Language XML files (<strong>.xml</strong>) and Comma Separated Values files (<strong>.csv</strong>).</li>
+<li><strong>Diagrams</strong>: The diagram files used with graphyte are also text-based. Currently supported formats are Unified Modeling Language UML (<strong>.uml</strong>), Scalable Vector Graphics files (<strong>.svg</strong>) and YANG files (<strong>.yang</strong>). UML file support is achieved by graphyte via integration with the <strong>PlantUML</strong> tool. SVG is an XML-based image format for two-dimensional graphics. A variety of applications allow creating or exporting to SVG files, including Inkscape or Microsoft Visio.</li>
+<li><strong>Variable list</strong>: Optionally, depending on which graphyte features the user is aiming for, additional input files may be needed. This is the case for example for input files with parameters, that graphyte can automatically validate against a user defined list of allowed model parameters.</li>
+<li><strong>graphyte.conf file</strong>: The user is required to include a small configuration file where a series of options can be set, including the name and version of the model.</li>
+</ul>
+<h1 id="templates">Templates</h1>
+<p><img alt="template_txt.jpg" src="../img/template_txt.jpg" /></p>
+<p>The ultimate objective of a model is to represent relevant information in the viewer area responding to user events (mouse clicks) on the different parts of the diagram.</p>
+<p>This relevant information is provided to graphyte in the form of text files called <strong>templates</strong>.</p>
+<p>Templates may optionally include parameters. Graphyte provides syntax capabilities to support up to 4 types of parameters that will be recognized, processed and highlighted as such.</p>
+<p>Take a look at the <a href="../templates/">Templates section</a> for details on how to create graphyte templates.</p>
+<h2 id="txt-templates">TXT Templates</h2>
+<p>Any plain text content to be displayed in the viewer can be added as a file with <strong>.txt</strong> extension.</p>
+<p>TXT templates may use variables if desired. When displayed in the viewer (after the user clicks on the associated diagram section) the variables are highlighted for readability.</p>
+<h2 id="variables-in-txt-templates">Variables in TXT Templates</h2>
+<p>Graphyte supports variable markup syntax based on text bracketing, that allows it to recognize up to 4 different types of variables in the plain text files, process and validate them, and color highlight them in the viewer in real time.</p>
+<p>The following variable syntax markers are available for <strong>.txt</strong> files:</p>
+<ul>
+<li><strong>Type 1</strong> variables: <strong><variable_name></strong></li>
+<li><strong>Type 2</strong> variables: <strong>&lt;{variable_name}&gt;</strong></li>
+<li><strong>Type 3</strong> variables: <strong>&lt;(variable_name)&gt;</strong></li>
+<li><strong>Type 4</strong> variables: <strong>&lt;[variable_name]&gt;</strong></li>
+</ul>
+<p>It is up to the graphyte user to decide the specific role that each of the variable types above will play in the model. Some models will require several categories for different types of variables, others might only require a single type, and some models might not even require parametrized templates at all. There is full flexibility on this regard.</p>
+<p>When the template is loaded in the viewer, the variables are rendered for better readability. Different markers are highlighted in different colors.</p>
+<p>Say, for instance, the user would like to add to the model a template for the configuration of a sub-interface, leaving some of the configuration data as input variables. The user will mark those variables picking one of the available markers in a way that makes sense for his model. For example '<strong>&lt; &gt;</strong>' (<strong>Type 1</strong>) for input variables, and '<strong>&lt;[ ]&gt;</strong>' (<strong>Type 4</strong>) for variables that need to be looked up on some database. Graphyte will spot and process those variables and the viewer will highlight them according to their markup.</p>
+<p><img alt="template_txt.jpg" src="../img/template_txt.jpg" /></p>
+<p>Parameter names must follow some rules:</p>
+<ul>
+<li>May not contain spaces or newlines.</li>
+<li>May only contain markup characters in external marker '&lt; &gt; { } ( ) [ ]'. (E.g.: <na{m}e> is not a valid variable name, while &lt;{name}&gt; is).</li>
+<li>The standard recommendation is to use <strong>letters [a-zA-Z]</strong>, <strong>numbers [0-9]</strong> and <strong>underscores '_'</strong>.</li>
+</ul>
+<h2 id="csv-templates">CSV Templates</h2>
+<p>Comma Separated Values (<strong>.csv</strong>) files are used to represent tables.</p>
+<p>CSV files can be created on any plain text editor. New rows are depicted by the newline or carriage return character, and cells within a row are separated by the character '<strong>,</strong>'. The filename must have the extension .csv for graphyte to recognize it as a CSV input file, and represent it as a table when loaded in the viewer.</p>
+<h2 id="variables-in-csv-templates">Variables in CSV Templates</h2>
+<p>The same considerations as for variables in TXT files apply for CSV files. Syntax will be highlighted and the same kind of parameter processing will be performed.</p>
+<p><img alt="template_csv.jpg" src="../img/template_csv.jpg" /></p>
+<p>In this example, the user has included two types of parameters, marked with '<strong>&lt; &gt;</strong>' (<strong>Type 1</strong>) and '<strong>&lt;{ }&gt;</strong>' (<strong>Type 2</strong>). Perhaps the model owner has defined that type 1 parameters (yellow) will mean "input parameters" in his model, and type 2 parameters (blue) are those that can be calculated based on others (derived) and therefore are not needed as inputs.</p>
+<h2 id="xml-templates">XML Templates</h2>
+<p>XML template files are passed to graphyte as input files with the extension <strong>.xml</strong>. When displayed in the viewer, graphyte performs a basic highlighting differentiating the text that is part of the XML markup (inside '&lt; &gt;' tags) and the text that is part of the XML data content, also known as "character data".</p>
+<h2 id="variables-in-xml-templates">Variables in XML Templates</h2>
+<p>The syntax used to specify parameters on XML files differs from the one used for TXT or CSV on the fact that it uses a simple brace bracketing '<strong>{ }</strong>' markup. Parameters on XML files are not validated and are highlighted in yellow as follows.</p>
+<p><img alt="template_xml.jpg" src="../img/template_xml.jpg" /></p>
+<p>In the example some of the character data fields include parameters that are highlighted in the viewer, while others have fixed values. A character data field may have fixed parts and parameters at the same time.</p>
+<h1 id="diagrams">Diagrams</h1>
+<p>Diagrams allow the model designer to represent large amounts of information in a usable and condensed way.</p>
+<p>Graphyte supports two types of input diagrams:</p>
+<ul>
+<li><strong>SVG</strong>: Scalable Vector Graphics files (with extension <strong>.svg</strong>).</li>
+<li><strong>UML</strong>: Unified Modeling Language UML files (with extension <strong>.uml</strong>)</li>
+</ul>
+<p>Both types of diagram specifications are text-based and require a rendering engine to create the resulting graphics. Below you can see a couple of examples of the source text file and the rendered version for both types of diagrams:</p>
+<p><img alt="xml.jpg" src="../img/xml.jpg" /></p>
+<p><img alt="uml.jpg" src="../img/uml.jpg" /></p>
+<h2 id="modules-and-diagram-files">Modules and diagram files</h2>
+<p>We saw earlier that a graphyte model is formed by several modules. The modules present in a model have a 1 to 1 correspondence with the diagrams provided as input, i.e. for each input diagram (file with extension <strong>.svg</strong> or <strong>.uml</strong>), graphyte will create one dedicated module in the model.</p>
+<p>In order to name each module, graphyte will use the corresponding input diagrams filename. It will strip the extension and use the remaining part as name for the module.</p>
+<p>For example, for a diagram filename "Architecture Components.svg", the resulting module will be named "Architecture Components".</p>
+<h2 id="linking-input-diagrams-and-templates">Linking input diagrams and templates</h2>
+<p>If everything goes as planned, graphyte will produce a series of web documents embedding both diagrams and templates. When the user selects active shapes of the diagram, the corresponding templates will be triggered and loaded into the viewer.</p>
+<p>For this to be possible, there must be some association linking a particular element in a diagram to one of the multiple input templates. Graphyte uses the <strong>Hyperlink</strong> field on diagram shapes to establish that association between shape and template. The user is required to add a hyperlink to each shape with the name of the target template to be loaded on a mouse-click event.</p>
+<h2 id="supported-link-types">Supported Link Types</h2>
+<p>Graphyte supports 3 types of links in diagrams:</p>
+<ul>
+<li>Links to templates</li>
+</ul>
+<p>Used to show the contents of a template in the viewer when clicking on a particular shape. In order to achieve this, in your diagram, add a link to the shape. Add the name of the template in the href field (the path is not required). No additional tags are required.</p>
+<pre><code>E.g.: href="my_template.txt"
+</code></pre>
+<ul>
+<li>Links to other modules in the model</li>
+</ul>
+<p>This allows the user to, by clicking on a shape in one module, load another one of the modules in the same model. In order to define this type of link, we must use the tag "mod:".</p>
+<p>E.g.: Consider the following graphyte model called "Project ACME", which has 3 diagrams, that will generate 3 modules:</p>
+<pre><code>Model = "Project ACME"
+
+Module 1 = foo.svg
+
+Module 2 = bar.svg
+
+Module 3 = baz.uml
+</code></pre>
+<p>In order to go from Module 1 to Module 2, the user could rely on the embedded navigation menu that graphyte adds to the model. But it is also possible to add a link to a shape in foo.svg, that will take the user directly to Module 2. In order to achieve this, the model owner can add a link to a shape in foo.svg with the content:</p>
+<pre><code>href="mod:bar.svg"
+</code></pre>
+<p>(It is also possible to leave the extension out, as in <strong>href="mod:bar"</strong>).</p>
+<p>The same applies for uml diagrams. However there is one thing the model owner needs to take care of. Plantuml syntax for hyperlinks does not allow spaces, while graphyte does allow spaces in diagram filenames. So in graphyte we could have a diagram file called "foo bar.uml". In order to link to that module from a plantuml diagram, model owner must remember to replace spaces (" ") by their percent encoding ("%20") sign: "foo%20bar.uml". This is not required for SVG diagrams.</p>
+<ul>
+<li>Links to any external URL</li>
+</ul>
+<p>In order for graphyte not to interpret href field contents, the model owner must add it as a literal hyperlink with the tag "lit:".</p>
+<p>This will be useful to link to URLs that graphyte should not process further.</p>
+<pre><code>E.g.: href="lit:https://www.cisco.com/"
+</code></pre>
+<p>When clicking on the shape it will load the URL <a href="https://www.cisco.com">https://www.cisco.com</a> in the browser.</p>
+<h2 id="svg-diagrams">SVG Diagrams</h2>
+<p>SVG files are text-based specifications of two-dimensional graphics, written following an XML-based structure. Rendering of most SVG graphics is supported by the majority of mainstream modern browsers (<strong>W3C</strong>). Other advanced features present in complex SVG elements, like for example "foreign-object" elements are not supported in the HTML5 <svg> element. Test HTML support for your diagrams passing them to the graphyte tool.</p>
+<p>The creation of SVG graphics is usually achieved by using a graphic editor. One can simply draw lines and shapes and once ready export the work to an SVG file. We will explain how to do this using several editors widely known and used:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Microsoft_Visio">Visio</a>, a widely used software from Microsoft.</li>
+<li><a href="https://www.draw.io/">Draw.io</a>, an online flowchart editor.</li>
+<li><a href="https://inkscape.org/">Inkscape</a>, a free vector graphics editor.</li>
+</ul>
+<p>In these sections we will first create a simple shape, then add the link for a hypothetical template file, and lastly export to SVG format, compatible with graphyte. Creating a model will come down to repeat the procedure for each shape/template of each diagram.</p>
+<h3 id="creating-svg-diagrams-with-microsoft-visio">Creating SVG diagrams with Microsoft Visio</h3>
+<p>This might be the most familiar solution in many cases, since it comes with simple to use stencil collections for any kind of diagram, which can also be extended downloading new stencils from online sources.</p>
+<p>Open Visio and draw any shape or stencil you want. For example in the top Ribbon - Tools select the rectangle and draw a rectangle in your canvas.</p>
+<p>Right-click on your shape and select "Hyperlink...".</p>
+<p><img alt="visio_1.png" src="../img/visio_1.png" /></p>
+<p>Edit the field "Address:" and add the name of the TXT, CSV or XML template you would like to link to this shape. <strong>Only the filename</strong> is required, no need for the full path to the template. When done click OK.</p>
+<p><img alt="visio_2.png" src="../img/visio_2.png" /></p>
+<p>Repeat the steps above until your diagram is ready.</p>
+<p>(see also: <a href="#Supported-Link-Types">Supported Link Types</a> section)</p>
+<p>In order to export the diagram to SVG from Visio click on <strong>File -&gt; Export -&gt; Change File Type-&gt; SVG</strong> and choose the name of your SVG file. This will become the name of the module, and that the file must keep its <strong>.svg</strong> extension.</p>
+<blockquote>
+<p><strong>Important</strong>: Filenames must be <strong>unique</strong> per model. Graphyte will crawl through all the input files looking for every linked filename until it finds the first match.</p>
+</blockquote>
+<h3 id="creating-svg-diagrams-with-drawio">Creating SVG diagrams with Draw.io</h3>
+<p>Draw.io is a great online graph editor from JGraph Ltd. It has an intuitive and rich interface to create all kinds of diagrams and flow charts.</p>
+<p>Visit <a href="www.draw.io">Draw.io</a> and select "Create New Diagram" from the splash screen. If you had previously created a draw.io diagram and exported it to a file, you can select "Open Existing Diagram" and upload it again for edition:</p>
+<p><img alt="drawio_splash.png" src="../img/drawio_splash.png" /></p>
+<p>Draw.io has a bunch of chart types to choose from. Start with the "Basic" chart.</p>
+<p><img alt="drawio_new.png" src="../img/drawio_new.png" /></p>
+<p>Drag and drop the shapes on the left panel into the canvas. You can move the shapes and change their size and proportions.</p>
+<p><img alt="drawio.png" src="../img/drawio.png" /></p>
+<p>Select a shape and use the tools on the right panel to change styles, arrangement and text.</p>
+<p><img alt="drawio_shape.png" src="../img/drawio_shape.png" /></p>
+<p>In order to add the link to the template, right click on a shape and select "Edit Link...".</p>
+<p><img alt="drawio_link1.png" src="../img/drawio_link1.png" /></p>
+<p>Add the name of the TXT, CSV or XML template you would like to link to this shape. <strong>Only the name</strong>, no need for the full path to the template. When done click on "Apply".</p>
+<p><img alt="drawio_link2.png" src="../img/drawio_link2.png" /></p>
+<p>(see also: <a href="#Supported-Link-Types">Supported Link Types</a> section)</p>
+<p>At any point in time you can rename your diagram, in order to do so click on File -&gt; Rename and edit the filename. Leave the .xml extension, for now.</p>
+<p><img alt="drawio_rename.png" src="../img/drawio_rename.png" /></p>
+<p>Once your diagram is ready you need to export it to SVG. In order to do so click on File -&gt; Export -&gt; SVG.</p>
+<p><img alt="drawio_export.png" src="../img/drawio_export.png" /></p>
+<p>Click on "Export."</p>
+<p><img alt="drawio_export2.png" src="../img/drawio_export2.png" /></p>
+<p>And then "Download" to get the SVG file into your local filesystem.</p>
+<p><img alt="drawio_export3.png" src="../img/drawio_export3.png" /></p>
+<h3 id="creating-svg-diagrams-with-inkscape">Creating SVG diagrams with Inkscape</h3>
+<p>Perhaps a bit more complex to learn than Visio, but quite powerful, fully equiped with vector graphic manipulation tools.</p>
+<p>Select a shape from the bar on the left, for example the rectangle, and draw a shape. Right click on the shape and select "Create link"</p>
+<p><img alt="inkscape1.png" src="../img/inkscape1.png" /></p>
+<p>A file attributes box will pop up on the right side. In the field "Href" write the name of the TXT, CSV or XML template file you want to link. Remember to write only the name of the template, no need for the full path.</p>
+<p><img alt="inkscape2.png" src="../img/inkscape2.png" /></p>
+<blockquote>
+<p><strong>Important</strong>: Filenames must be <strong>unique</strong> per model. Graphyte will crawl through all the input files looking for every linked filename until it finds the first match.</p>
+</blockquote>
+<p>In order to add another shape just repeat the steps again. You can add hyperlinks to virtually any element you add to the Inkscape canvas, the options are endless.</p>
+<p>When your diagram is ready, click on <strong>Archive -&gt; Save as</strong> and choose the name of your SVG file. Remember that this will later become the name of the module, and that the file must keep its <strong>.svg</strong> extension.</p>
+<p><img alt="inkscape3.png" src="../img/inkscape3.png" /></p>
+<p>(see also: <a href="#Supported-Link-Types">Supported Link Types</a> section)</p>
+<h2 id="uml-diagrams">UML Diagrams</h2>
+<p>Graphyte achieves support for UML specification files through integration with the great <a href="http://plantuml.com/">PlantUML tool</a>. PlantUML is widely used in IT for a variety of applications, from creating live diagrams while extracting requirements from a customer, to creating specifications for a design, representations of software components or creating charts of any kind.</p>
+<p>At the time of this writing, the following UML diagrams are supported by PlantUML:</p>
+<ul>
+<li>[Sequence diagram(http://plantuml.com/sequence-diagram)</li>
+<li><a href="http://plantuml.com/use-case-diagram">Usecase diagram</a></li>
+<li><a href="http://plantuml.com/class-diagram">Class diagram</a></li>
+<li><a href="http://plantuml.com/activity-diagram-beta">Activity diagram</a></li>
+<li><a href="http://plantuml.com/component-diagram">Component diagram</a></li>
+<li><a href="http://plantuml.com/state-diagram">State diagram</a></li>
+<li><a href="http://plantuml.com/object-diagram">Object diagram</a></li>
+<li><a href="http://plantuml.com/deployment-diagram">Deployment diagram</a></li>
+<li><a href="http://plantuml.com/timing-diagram">Timing diagram</a></li>
+</ul>
+<p>On each of the links above, the PlantUML folks guide you through the creation of each type of diagram. It´s worth taking a look at the possibilities.</p>
+<p>Once you have your first UML specification ready, you can test it online on <a href="http://www.plantuml.com/plantuml">PlantUML Web Server</a>. Or, if you prefer, <a href="http://plantuml.com/download">download PlantUML</a> and work offline.</p>
+<h3 id="creating-uml-diagrams-for-graphyte">Creating UML diagrams for Graphyte</h3>
+<p>Use the plain text editor of your choice to create the UML file with your diagram's specification, following the guides on <a href="http://plantuml.com/">PlantUML website</a>.</p>
+<p>In order to link an element of your diagram to a specific input template, follow the format described in <a href="http://plantuml.com/link">Using Hyperlinks with PlantUML</a>. </p>
+<p>In the following example, graphyte will load the user created template <strong>request.txt</strong> in the viewer area when clicking on the "Request" text, and will load the template <strong>response.txt</strong> when it detects a click on the "Response" text in the diagram.</p>
+<p><img alt="uml_diagram.jpg" src="../img/uml_diagram.jpg" /></p>
+<p>(see also: <a href="#Supported-Link-Types">Supported Link Types</a> section)</p>
+<p>Choose the name of your UML file carefully. Remember that this will later become the name of the module, and that the file must keep its .uml extension.</p>
+<h3 id="variable-list">Variable List</h3>
+<p>As seen in the <a href="../templates/">Templates chapter</a>, graphyte templates may include variables, which are marked using a specific available syntax: '<strong>&lt; &gt;</strong>' (type 1), '<strong>&lt;{ }&gt;</strong>' (type 2), '<strong>&lt;( )&gt;</strong>' (type 3) and '<strong>&lt;[ ]&gt;</strong>' (type 4).</p>
+<p>Optionally, the model designer may choose to perform automatic validation of template variables against a pre-defined input list, provided in .xls/.xlsx sheet format. This will help ensure that all variables used in templates are known and valid. The process is the following:</p>
+<ul>
+<li>The user provides an input sheet (XLS/XLSX) along with the rest of input documents (templates, diagrams, etc).</li>
+<li>The first row is reserved for headers. On the first column, the user includes a list of <strong>authorized parameters</strong> in the model. The rest of the columns may contain information or not.</li>
+<li>While generating the model, graphyte will analyze all the parameters on each of the input templates, and check them against the authorized parameters.</li>
+<li>On each module, graphyte will include a section <strong>"Module parameters"</strong>, where the results of the analysis are displayed as a table. If any non-authorised parameters were found in any template used by the module, they will be marked as such in the table, and an alert sign will show up: "Module Parameters ( ! )".</li>
+</ul>
+<p><img alt="variable_list.jpg" src="../img/variable_list.jpg" /></p>
+<p>Every parameter found in TXT and CSV templates will be checked against the parameters in this sheet (marked in red in the example).</p>
+<blockquote>
+<p><strong>Important</strong>: Parameters must be added to the worksheet with their correct markers ('<strong>&lt; &gt;</strong>', '<strong>&lt;{ }&gt;</strong>', '<strong>&lt;( )&gt;</strong>', '<strong>&lt;[ ]&gt;</strong>') in order for graphyte to match them correctly.</p>
+</blockquote>
+<h3 id="configuration-file">Configuration File</h3>
+<p>Finally, graphyte requires a configuration file where the user can find some mandatory settings and others that are optional:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Section</th>
+<th align="center">Setting</th>
+<th align="center">mandatory/optional</th>
+<th align="center">Example</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>[main]</strong></td>
+<td align="center">model</td>
+<td align="center">mandatory</td>
+<td align="center">model = HLD Customer ACME</td>
+<td align="center">Global name of the model. It will appear in all modules.</td>
+</tr>
+<tr>
+<td align="center"><strong>[main]</strong></td>
+<td align="center">version</td>
+<td align="center">mandatory</td>
+<td align="center">version = 1.0</td>
+<td align="center">Version of the model.</td>
+</tr>
+<tr>
+<td align="center"><strong>[parameters]</strong></td>
+<td align="center">auth_params</td>
+<td align="center">optional</td>
+<td align="center">auth_params = ACME_params.xls</td>
+<td align="center">Worksheet with the list of authorised parameters for template validation.</td>
+</tr>
+<tr>
+<td align="center"><strong>[layout]</strong></td>
+<td align="center">diagram_order</td>
+<td align="center">optional</td>
+<td align="center">diagram_order = Overview.svg,Sequence.uml,Architecture Components.uml,Service.svg</td>
+<td align="center">Desired order for the modules in the navigation menu. Use exact diagram filenames (spaces allowed). Comma separated.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="configfile.jpg" src="../img/configfile.jpg" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

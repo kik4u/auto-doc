@@ -1,0 +1,31 @@
+1.0.12
+------
+- fixed trailing empty line on csv tables
+- process template variables by default for all except xml, yang, changefile
+
+1.0.11
+------
+- fix error gm.in_diagram_name overriden
+
+1.0.10
+------
+- added support for confluence integration.
+- added pip installer.
+- added container execution mode.
+
+1.0.9
+-----
+- added detection of scdp.cisco.com hosted svg diagrams.
+- increased max zoom limit for diagrams 400%->800%.
+
+1.0.8
+-----
+- fixed detect draw.io file also in agent attribute.
+
+1.0.7
+-----
+- Added support for rendering .yang input diagrams.
+
+1.0.6
+-----
+- Going public.
